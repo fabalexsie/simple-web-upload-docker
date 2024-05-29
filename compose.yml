@@ -7,3 +7,4 @@ services:
       - "1337:80"
     volumes:
       - ./uploads:/var/www/html/uploads
+      - ./index.php:/var/www/html/index.php # this is just for testing purposes

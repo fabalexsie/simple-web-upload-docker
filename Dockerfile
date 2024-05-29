@@ -1,6 +1,4 @@
 FROM richarvey/nginx-php-fpm:latest
-RUN mkdir -p /run/nginx
-RUN apk add --no-cache nginx-mod-http-lua
 ENV PHP_UPLOAD_MAX_FILESIZE 10000
 ENV PHP_POST_MAX_SIZE 10000
 ENV PHP_MEM_LIMIT 10000

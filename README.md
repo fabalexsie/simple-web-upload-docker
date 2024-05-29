@@ -3,12 +3,22 @@
 Example execution:
 
 ```
-docker run --rm -it -v "$PWD/uploads:/uploads" -p 32773:80 ghcr.io/fabalexsie/simple-web-upload-docker:master
+docker run --rm -it -v "$PWD/uploads:/uploads" -p 1337:80 ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 
-or via compose.yml: See [docker-compose.yml](docker-compose.yml)
+or via compose.yml:
 
-Go to http://localhost:32773 to upload files.
+```yaml
+services:
+  app:
+    image: ghcr.io/fabalexsie/simple-web-upload-docker:master
+    ports:
+      - "1337:80" # webserver is visible on host port 1337
+    volumes:
+      - ./uploads:/var/www/html/uploads
+```
+
+Go to http://localhost:1337 to upload files.
 
 Files will be uploaded to ./uploads
 

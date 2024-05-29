@@ -4,6 +4,6 @@ services:
     # when using directly from the github hub
     # image: ghcr.io/fabalexsie/simple-web-upload-docker:master
     ports:
-      - "32773:80"
+      - "1337:80"
     volumes:
       - ./uploads:/var/www/html/uploads

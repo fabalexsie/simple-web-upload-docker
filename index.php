@@ -13,33 +13,38 @@
     }
   }
 ?><!DOCTYPE html>
-<html>
-<head>
-  <title>Upload your files</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <?php
-    foreach ($msgs as $msg) {
-      echo "<p>$msg</p>";
-    }
-    ?>
-  <form enctype="multipart/form-data" action="/" method="POST">
-    <p>Upload your file</p>
-    <input type="file" name="uploaded_file"></input><br />
-    <input type="submit" value="Upload"></input>
-  </form>
-  <ul>
-    <?php
-      $dir = "/var/www/html/uploads/";
-      $files = scandir($dir);
-      foreach ($files as $file) {
-        if ($file == '.' || $file == '..') {
-          continue;
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Upload your files</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
+  </head>
+  <body>
+    <main>
+      <?php
+        foreach ($msgs as $msg) {
+          echo "<p>$msg</p>";
         }
-        echo "<li><a href='uploads/$file'>$file</a></li>";
-      }
-    ?>
-  </ul>
-</body>
+      ?>
+    <form enctype="multipart/form-data" action="/" method="POST">
+      <h1>Upload your file</h1>
+      <input type="file" name="uploaded_file"></input><br />
+      <input type="submit" value="Upload"></input>
+    </form>
+    <ul>
+      <?php
+        $dir = "/var/www/html/uploads/";
+        $files = scandir($dir);
+        foreach ($files as $file) {
+          if ($file == '.' || $file == '..') {
+            continue;
+          }
+          echo "<li><a href='uploads/$file'>$file</a></li>";
+        }
+      ?>
+    </ul>
+    </main>
+  </body>
 </html>

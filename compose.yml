@@ -1,0 +1,9 @@
+services:
+  app:
+    build: . # when the repo is cloned and the Dockerfile is in the root
+    # when using directly from the github hub
+    # image: ghcr.io/fabalexsie/simple-web-upload-docker:master
+    ports:
+      - "32773:80"
+    volumes:
+      - ./uploads:/var/www/html/uploads

@@ -3,7 +3,7 @@
 Example execution:
 
 ```
-docker run --rm -it -v "$PWD/uploads:/uploads" -p 1337:80 ghcr.io/fabalexsie/simple-web-upload-docker:master
+docker run --rm -it -v "$PWD/uploads:/var/www/html/uploads" -p 1337:80 ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 
 or via compose.yml:

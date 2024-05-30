@@ -5,6 +5,9 @@ services:
     # image: ghcr.io/fabalexsie/simple-web-upload-docker:master
     ports:
       - "1337:80"
+      - "1338:443"
     volumes:
       - ./uploads:/var/www/html/uploads
       - ./index.php:/var/www/html/index.php # this is just for testing purposes
+    environment:
+      - HOSTIP=192.168.0.113

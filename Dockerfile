@@ -17,7 +17,7 @@ RUN mkdir -p /var/www/html/uploads
 COPY nginx.conf /etc/nginx/
 COPY ssl.conf /etc/nginx/sites-enabled/
 
-COPY index.php /var/www/html/
+COPY src/ /var/www/html/
 COPY start.sh /app/
 
 CMD ["/app/start.sh"]

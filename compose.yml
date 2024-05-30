@@ -8,6 +8,7 @@ services:
       - "1338:443"
     volumes:
       - ./uploads:/var/www/html/uploads
-      - ./index.php:/var/www/html/index.php # this is just for testing purposes
+      # this is just for testing purposes
+      - ./src/index.php:/var/www/html/index.php
     environment:
       - HOSTIP=192.168.0.113

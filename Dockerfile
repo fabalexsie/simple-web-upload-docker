@@ -1,8 +1,3 @@
-LABEL org.opencontainers.image.title="Simple Web Upload Docker"
-LABEL org.opencontainers.image.source=https://github.com/fabalexsie/simple-web-upload-docker
-LABEL org.opencontainers.image.authors="fabalexsie"
-LABEL org.opencontainers.image.description="Spin up a simple web upload server with Docker to receive files on your local machine via a web interface."
-
 FROM richarvey/nginx-php-fpm:latest
 ENV PHP_UPLOAD_MAX_FILESIZE 10000
 ENV PHP_POST_MAX_SIZE 10000
@@ -10,6 +5,12 @@ ENV PHP_MEM_LIMIT 10000
 
 ARG HOSTIP
 ENV HOSTIP=${HOSTIP}
+
+LABEL org.opencontainers.image.title="Simple Web Upload Docker"
+LABEL org.opencontainers.image.source=https://github.com/fabalexsie/simple-web-upload-docker
+LABEL org.opencontainers.image.authors="fabalexsie"
+LABEL org.opencontainers.image.description="Spin up a simple web upload server with Docker to receive files on your local machine via a web interface."
+LABEL org.opencontainers.image.base.name="docker.io/richarvey/nginx-php-fpm:latest"
 
 WORKDIR /app
 RUN curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"

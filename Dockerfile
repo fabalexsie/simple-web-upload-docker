@@ -1,3 +1,8 @@
+LABEL org.opencontainers.image.title="Simple Web Upload Docker"
+LABEL org.opencontainers.image.source=https://github.com/fabalexsie/simple-web-upload-docker
+LABEL org.opencontainers.image.authors="fabalexsie"
+LABEL org.opencontainers.image.description="Spin up a simple web upload server with Docker to receive files on your local machine via a web interface."
+
 FROM richarvey/nginx-php-fpm:latest
 ENV PHP_UPLOAD_MAX_FILESIZE 10000
 ENV PHP_POST_MAX_SIZE 10000

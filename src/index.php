@@ -29,23 +29,31 @@
           echo "<p>$msg</p>";
         }
       ?>
-    <form enctype="multipart/form-data" action="/" method="POST">
+
       <h1>Upload your file</h1>
-      <input type="file" name="uploaded_file"></input><br />
-      <input type="submit" value="Upload"></input>
-    </form>
-    <ul>
+      <form enctype="multipart/form-data" action="/" method="POST">
+        <input type="file" name="uploaded_file"></input><br />
+        <input type="submit" value="Upload"></input>
+      </form>
+
       <?php
         $dir = "/var/www/html/uploads/";
         $files = scandir($dir);
+        if($files === false || count($files) == 0) {
+          echo "<li>No files uploaded yet</li>";
+        } else {
+
+        echo "<h1>Uploaded files</h1>";
+        echo "<ul>";
         foreach ($files as $file) {
           if ($file == '.' || $file == '..') {
             continue;
           }
           echo "<li><a href='uploads/$file'>$file</a></li>";
         }
+          echo "</ul>";
+        }
       ?>
-    </ul>
     </main>
   </body>
 </html>

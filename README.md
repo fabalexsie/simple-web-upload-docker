@@ -1,4 +1,10 @@
-# docker-nginx-php-upload
+# Simple Web Uploader Docker
+
+![http support](https://badgen.net/badge/http/yes/97ca00?icon=https%3A%2F%2Fwww.svgrepo.com%2Fdownload%2F491433%2Flock-open.svg)
+![https support](https://badgen.net/badge/https/yes/97ca00?icon=https%3A%2F%2Fwww.svgrepo.com%2Fdownload%2F491434%2Flock.svg)
+[![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://ghcr.io/fabalexsie/simple-web-upload-docker)
+
+![Screenshot-PC](src/images/screenshot-pc.png)
 
 Example execution:
 

@@ -1,4 +1,4 @@
-# Simple Web Uploader Docker
+# Simple Web Upload Docker
 
 ![http support](https://badgen.net/badge/http/yes/97ca00?icon=https%3A%2F%2Fwww.svgrepo.com%2Fdownload%2F491433%2Flock-open.svg)
 ![https support](https://badgen.net/badge/https/yes/97ca00?icon=https%3A%2F%2Fwww.svgrepo.com%2Fdownload%2F491434%2Flock.svg)

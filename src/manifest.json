@@ -1,6 +1,6 @@
 {
   "short_name": "SWUD",
-  "name": "Simple Web Uploader Docker",
+  "name": "Simple Web Upload Docker",
   "icons": [
     {
       "src": "/images/icon.svg",

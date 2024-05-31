@@ -19,5 +19,6 @@ COPY ssl.conf /etc/nginx/sites-enabled/
 
 COPY src/ /var/www/html/
 COPY start.sh /app/
+RUN chmod +x /app/start.sh
 
 CMD ["/app/start.sh"]

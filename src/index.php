@@ -7,7 +7,7 @@
 
     if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'], $path)) {
       $msgs[] = "The file ".  basename( $_FILES['uploaded_file']['name']). 
-      " has been uploaded";
+      " has been uploaded.";
     } else{
         $msgs[] = "There was an error uploading the file, please try again!";
     }
@@ -27,17 +27,17 @@
   </head>
   <body>
     <main>
-      <?php
-        foreach ($msgs as $msg) {
-          echo "<p>$msg</p>";
-        }
-      ?>
-
       <h1>Upload your file</h1>
       <form enctype="multipart/form-data" action="/" method="POST">
         <input type="file" name="uploaded_file"></input><br />
         <input type="submit" value="Upload"></input>
       </form>
+      
+      <?php
+        foreach ($msgs as $msg) {
+          echo "<small><article style=\"border: 2px solid #0c7c59; background-color: #03b309\">$msg</article></small>";
+        }
+      ?>
 
       <?php
         $dir = "/var/www/html/uploads/";

@@ -7,6 +7,7 @@ docker run --rm -it \
   -v "$PWD/uploads:/var/www/html/uploads" \
   -e HOSTIP=$(hostname -I | awk '{print $1}') \
   -p 1337:443 \
+  --pull always \
   ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 

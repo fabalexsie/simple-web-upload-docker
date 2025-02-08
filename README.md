@@ -17,6 +17,12 @@ docker run --rm -it \
   ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 
+In a single line for e.g. for windows
+
+```bash
+docker run --rm -it -v "$PWD/uploads:/var/www/html/uploads" -e HOSTIP=$(hostname -I | awk '{print $1}') -p 1337:443 --pull always ghcr.io/fabalexsie/simple-web-upload-docker:master
+```
+
 > `HOSTIP` can also be set manually to the local ip for example 192.168.X.X
 > It is only needed for the self signed certificate, when reaching the webapp via https (necessary for PWA).
 

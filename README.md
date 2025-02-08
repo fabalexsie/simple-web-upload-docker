@@ -17,10 +17,11 @@ docker run --rm -it \
   ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 
-In a single line for e.g. for windows
+One click usage in Windows
 
 ```bash
-docker run --rm -it -v "$PWD/uploads:/var/www/html/uploads" -e HOSTIP=$(hostname -I | awk '{print $1}') -p 1337:443 --pull always ghcr.io/fabalexsie/simple-web-upload-docker:master
+for /f "delims=[] tokens=2" %a in ('ping -4 -n 1 %ComputerName% ^| findstr [') do set LocalIP=%a
+docker run --rm -it -v "%CD%/uploads:/var/www/html/uploads" -e HOSTIP=%LocalIP% -p 1337:443 --pull always ghcr.io/fabalexsie/simple-web-upload-docker:master
 ```
 
 > `HOSTIP` can also be set manually to the local ip for example 192.168.X.X
